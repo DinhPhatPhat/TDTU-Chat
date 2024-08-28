@@ -1,0 +1,76 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+h1 {
+    text-align: center;
+    background: -webkit-linear-gradient(45deg, #09009f, #00ff95 80%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+    #chatContainer {
+    margin: 50px auto;
+    text-align: center;
+    color: #201E43;
+
+}
+
+#messagesList {
+    text-align: center;
+    width: 90%;
+    height: 500px;
+    border: 5px solid black;
+    margin: auto;
+    background-color: #ffffff;
+    overflow: auto;
+}
+
+.input-and-send{
+    margin-top: 10px;
+}
+
+#sendButton {
+    background-color: #508C9B;
+    color: #EEEEEE;
+    width: 20%;
+    height: 50px;
+    border-radius: 10px;
+}
+
+#sendButton:hover {
+    background-color: #EEEEEE;
+    color: #508C9B;
+    border-radius: 10px;
+}
+
+input[type=text] {
+    width: 50%;
+    height: 50px;
+    border-radius: 10px;
+}
+
+.messages {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #508C9B;
+    margin: 5px 10px;
+}

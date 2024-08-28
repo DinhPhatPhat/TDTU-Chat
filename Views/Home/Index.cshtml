@@ -1,0 +1,105 @@
+﻿@using System.Security.Claims
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - TDTU-Chat</title>
+    <link rel="stylesheet" href="~/css/site.css" /> <!-- Thêm link CSS -->
+    <link rel="stylesheet" href="~/css/notMine.css" /> <!-- Thêm link CSS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/6.0.0/signalr.min.js"></script>
+
+</head>
+<body>
+<h1>Welcome to TDTU Chat</h1>
+ 
+    <div class="newtons-cradle" id="newtons-cradle">
+        <div class="newtons-cradle__dot"></div>
+        <div class="newtons-cradle__dot"></div>
+        <div class="newtons-cradle__dot"></div>
+        <div class="newtons-cradle__dot"></div>
+    </div>
+
+<!-- Khung chat (ẩn mặc định) -->
+@{
+    string userEmail = User.Identity.IsAuthenticated ? User.FindFirstValue(ClaimTypes.Email) : null;
+}
+
+@if (!string.IsNullOrEmpty(userEmail))
+{   
+        <script>document.getElementById("newtons-cradle").style.display = "none";</script>
+
+
+    <div id="chatContainer" style="display:block;">
+        <h2>Các sinh viên đang nói gì?</h2>
+        <ul id="messagesList"></ul>
+        <div class="input-and-send">
+        <input type="text" id="messageInput" placeholder="Your message" />
+        <button id="sendButton">Send</button>
+            </div>
+    </div>
+}
+else
+{
+    <p>Please log in to access the chat.</p>
+}
+
+
+<script>
+    // Khởi tạo kết nối SignalR
+    const connection = new signalR.HubConnectionBuilder().withUrl("/chatHub").build();
+
+    // Xử lý tin nhắn nhận được từ server
+        connection.on("ReceiveMessage", function (user, message, timestamp) {
+            console.log("Received message:", user, message, timestamp); // Log để kiểm tra
+            const msg = message.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+            const encodedMsg = `<div class="messages"><span>${user}:</span> ${msg} <span class="timestamp">[${timestamp}]</span></div>`;
+            const li = document.createElement("li");
+            li.innerHTML = encodedMsg; // Sử dụng innerHTML để chèn HTML
+            document.getElementById("messagesList").appendChild(li);
+        });
+
+
+
+    // Khởi động kết nối
+    connection.start().then(function () {
+        console.log("SignalR connected.");
+    }).catch(function (err) {
+        console.error('SignalR connection error: ', err.toString());
+    });
+
+    // Xử lý sự kiện khi nhấn phím Enter trong ô input
+    document.getElementById("messageInput").addEventListener("keyup", function (event) {
+        if (event.key === "Enter" && this.value.trim() !== "") {
+            const user = "@userEmail"; // Lấy email từ phía server
+
+                connection.invoke("SendMessage", user, this.value.trim()).catch(function (err) {
+                console.error('Send message error: ', err.toString());
+            });
+
+            this.value = "";
+            event.preventDefault();
+        }
+    });
+    // Xử lý sự kiện nhấn nút gửi tin nhắn
+    document.getElementById("sendButton").addEventListener("click", function (event) {
+        const message = document.getElementById("messageInput").value;
+
+        if (!message) {
+            alert("Please enter a message.");
+            return;
+        }
+
+        const user = "@userEmail"; // Lấy email từ phía server
+
+        connection.invoke("SendMessage", user, message).catch(function (err) {
+            console.error('Send message error: ', err.toString());
+        });
+        document.getElementById("messageInput").value = "";
+        event.preventDefault();
+    });
+</script>
+
+</body>
+</html>
