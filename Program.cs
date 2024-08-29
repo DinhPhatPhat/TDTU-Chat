@@ -8,7 +8,7 @@ using TDTU_Chat.Data;
 using TDTU_Chat.Hubs;
 
 var builder = WebApplication.CreateBuilder(args);
-
+//mycheck
 // Đăng ký SignalR services
 builder.Services.AddSignalR();
 // Đăng ký DbContext xài Sql Server

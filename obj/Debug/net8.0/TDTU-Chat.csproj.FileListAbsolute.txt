@@ -140,3 +140,6 @@ C:\Users\Admin\OneDrive\StudyPlace\NAM 3\HK1\.Net Technology\TDTU-Chat\obj\Debug
 C:\Users\Admin\OneDrive\StudyPlace\NAM 3\HK1\.Net Technology\TDTU-Chat\obj\Debug\net8.0\TDTU-Chat.pdb
 C:\Users\Admin\OneDrive\StudyPlace\NAM 3\HK1\.Net Technology\TDTU-Chat\obj\Debug\net8.0\TDTU-Chat.genruntimeconfig.cache
 C:\Users\Admin\OneDrive\StudyPlace\NAM 3\HK1\.Net Technology\TDTU-Chat\obj\Debug\net8.0\ref\TDTU-Chat.dll
+D:\SummaryTDTU\NetTechnology\GK\TDTU-Chat\obj\Debug\net8.0\TDTU-Chat.dll
+D:\SummaryTDTU\NetTechnology\GK\TDTU-Chat\obj\Debug\net8.0\refint\TDTU-Chat.dll
+D:\SummaryTDTU\NetTechnology\GK\TDTU-Chat\obj\Debug\net8.0\TDTU-Chat.pdb

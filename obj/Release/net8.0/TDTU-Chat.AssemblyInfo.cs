@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: Microsoft.AspNetCore.Identity.UI.UIFrameworkAttribute("Bootstrap5")]
 [assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("aspnet-TDTU_Chat-b55cd18a-6d6d-4424-8c6f-04eaa7fd3097")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("TDTU-Chat")]
-[assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
+[assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9952c11d46b6d4aabe6f9575baff37a8dbc3f2e3")]
 [assembly: System.Reflection.AssemblyProductAttribute("TDTU-Chat")]
