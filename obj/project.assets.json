@@ -5747,19 +5747,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Admin\\.nuget\\packages\\": {}
+    "C:\\Users\\tatri\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Admin\\OneDrive\\StudyPlace\\NAM 3\\HK1\\.Net Technology\\TDTU-Chat\\TDTU-Chat.csproj",
+      "projectUniqueName": "D:\\College\\SummaryTDTU\\NetTechnology\\GK\\TDTU-Chat\\TDTU-Chat.csproj",
       "projectName": "TDTU-Chat",
-      "projectPath": "C:\\Users\\Admin\\OneDrive\\StudyPlace\\NAM 3\\HK1\\.Net Technology\\TDTU-Chat\\TDTU-Chat.csproj",
-      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Admin\\OneDrive\\StudyPlace\\NAM 3\\HK1\\.Net Technology\\TDTU-Chat\\obj\\",
+      "projectPath": "D:\\College\\SummaryTDTU\\NetTechnology\\GK\\TDTU-Chat\\TDTU-Chat.csproj",
+      "packagesPath": "C:\\Users\\tatri\\.nuget\\packages\\",
+      "outputPath": "D:\\College\\SummaryTDTU\\NetTechnology\\GK\\TDTU-Chat\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\tatri\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5829,7 +5829,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.108/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
